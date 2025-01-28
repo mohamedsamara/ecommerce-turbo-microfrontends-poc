@@ -1,0 +1,13 @@
+{
+  "name": "ecommerce-microfrontends",
+  "version": "1.0.0",
+  "scripts": {
+    "install:deps": "pnpm install && pnpm -r install",
+    "postinstall": "pnpm run build",
+    "dev": "pnpm -r dev",
+    "build": "pnpm -r build",
+    "preview": "pnpm -r preview"
+  },
+  "author": "Mohamed Samara (https://github.com/mohamedsamara)",
+  "license": "MIT"
+}
