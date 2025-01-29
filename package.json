@@ -2,12 +2,18 @@
   "name": "ecommerce-microfrontends",
   "version": "1.0.0",
   "scripts": {
-    "install:deps": "pnpm install && pnpm -r install",
-    "postinstall": "pnpm run build",
-    "dev": "pnpm -r dev",
-    "build": "pnpm -r build",
+    "build": "turbo build",
+    "dev": "turbo dev",
     "preview": "pnpm -r preview"
   },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+  "packageManager": "pnpm@8.15.6"
 }
