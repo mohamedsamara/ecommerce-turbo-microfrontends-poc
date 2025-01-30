@@ -1,0 +1,10 @@
+{
+  "extends": "@ecommerce/typescript-config/vite.json",
+  "include": ["src"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "paths": {
+      "@ecommerce/cart/*": ["./node_modules/@ecommerce/types"]
+    }
+  }
+}

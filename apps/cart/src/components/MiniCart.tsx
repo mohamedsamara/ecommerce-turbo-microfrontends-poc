@@ -16,7 +16,7 @@ const CartBadge = styled(Badge)`
   }
 `;
 
-import { useCart } from "../contexts/cart-context";
+import { useCart } from "@ecommerce/shared";
 import CartItem from "./CartItem";
 
 const MiniCart = () => {

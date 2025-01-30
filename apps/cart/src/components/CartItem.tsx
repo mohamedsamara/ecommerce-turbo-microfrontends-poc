@@ -2,7 +2,7 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-import { CartItemState } from "../contexts/cart-context";
+import { CartItemState } from "@ecommerce/shared";
 
 type Props = {
   cartItem: CartItemState;

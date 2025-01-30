@@ -3,14 +3,18 @@ import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
 
 const federationConfig = {
-  name: "@ecommerce/cart",
+  name: "@ecommerce/shop",
   filename: "remoteEntry.js",
+  remotes: {
+    "@ecommerce/cart": "http://localhost:4001/assets/remoteEntry.js",
+  },
   exposes: {
-    "./components": "./src/components",
+    "./entry": "./src/shop",
   },
   shared: [
     "react",
     "react-dom",
+    "@tanstack/react-query",
     "@mui/material",
     "@emotion/react",
     "@emotion/styled",
@@ -24,9 +28,9 @@ export default defineConfig({
     target: "esnext",
   },
   server: {
-    port: 4001,
+    port: 4002,
   },
   preview: {
-    port: 4001,
+    port: 4002,
   },
 });
