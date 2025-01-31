@@ -1,7 +1,13 @@
 {
   "extends": "@ecommerce/typescript-config/vite.json",
-  "include": ["src"],
+  "include": ["src", "@mf-types"],
   "compilerOptions": {
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@ecommerce/state/*": ["./node_modules/@ecommerce/microfrontends"]
+      // "*": ["./node_modules/@ecommerce/microfrontends/*"]
+      // "*": ["./node_modules/@ecommerce/microfrontends/dist/state/*"]
+      // "*": ["../node_modules/@ecommerce/microfrontends/dist/state/*"]
+    }
   }
 }

@@ -1,14 +1,15 @@
+import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 
-import { Product, useCart } from "@ecommerce/shared";
+import { Product } from "@ecommerce/shared";
+import { useCartStore } from "@ecommerce/state/stores";
 
 const ProductItem = ({ product }: { product: Product }) => {
-  const { addToCart } = useCart();
+  const { addToCart } = useCartStore();
 
   const handleAddToCart = () => {
     addToCart({
@@ -23,18 +24,45 @@ const ProductItem = ({ product }: { product: Product }) => {
   return (
     <Card
       sx={{
-        maxWidth: 345,
         display: "flex",
         flexDirection: "column",
         height: "100%",
       }}
     >
-      <CardMedia
-        sx={{ height: "300px", backgroundPosition: "center top" }}
-        image={product.image}
-        title={product.title}
-      />
-      <CardContent sx={{ flex: 1 }}>
+      <Box
+        sx={{
+          padding: (theme) => theme.spacing(1),
+        }}
+      >
+        <Box
+          sx={{
+            position: "relative",
+            width: "100%",
+            overflow: "hidden",
+            "&:before ": {
+              display: "block",
+              content: "''",
+              paddingBottom: "100%",
+            },
+          }}
+        >
+          <img
+            src={product.image}
+            alt={product.title}
+            style={{
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%",
+              maxWidth: "100%",
+              objectFit: "contain",
+              objectPosition: "center",
+            }}
+          />
+        </Box>
+      </Box>
+      <CardContent sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
         <Typography
           gutterBottom
           variant="h5"
@@ -43,6 +71,7 @@ const ProductItem = ({ product }: { product: Product }) => {
             overflow: "hidden",
             WebkitLineClamp: 2,
             WebkitBoxOrient: "vertical",
+            flex: 1,
           }}
         >
           {product.title}

@@ -1,5 +1,7 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
+import "./theme.d.ts";
+
 import palette from "./palette";
 import typography, { weight } from "./typography";
 import { borderRounded } from "./styles";

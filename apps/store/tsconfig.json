@@ -4,8 +4,8 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "paths": {
-      "@ecommerce/cart/*": ["./node_modules/@ecommerce/types"],
-      "@ecommerce/shop/*": ["./node_modules/@ecommerce/types"]
+      "@ecommerce/cart/*": ["./node_modules/@ecommerce/microfrontends"],
+      "@ecommerce/shop/*": ["./node_modules/@ecommerce/microfrontends"]
     }
   }
 }

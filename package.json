@@ -4,7 +4,7 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "preview": "pnpm -r preview"
+    "preview": "concurrently \"pnpm --filter state preview\" \"pnpm --filter cart preview\" \"pnpm --filter shop preview\" \"pnpm --filter store preview\""
   },
   "workspaces": [
     "apps/*",
@@ -13,6 +13,7 @@
   "author": "Mohamed Samara (https://github.com/mohamedsamara)",
   "license": "MIT",
   "devDependencies": {
+    "concurrently": "^9.1.2",
     "turbo": "^2.3.3"
   },
   "packageManager": "pnpm@8.15.6"
