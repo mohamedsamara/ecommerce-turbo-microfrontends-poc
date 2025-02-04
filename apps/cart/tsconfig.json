@@ -5,9 +5,6 @@
     "jsx": "react-jsx",
     "paths": {
       "@ecommerce/state/*": ["./node_modules/@ecommerce/microfrontends"]
-      // "*": ["./node_modules/@ecommerce/microfrontends/*"]
-      // "*": ["./node_modules/@ecommerce/microfrontends/dist/state/*"]
-      // "*": ["../node_modules/@ecommerce/microfrontends/dist/state/*"]
     }
   }
 }
